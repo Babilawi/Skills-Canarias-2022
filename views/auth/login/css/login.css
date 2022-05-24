@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+
+
+body{
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden
+}
+
+.moon{
+    z-index: 5000; 
+    width: 40px;
+}
+
+
+/* Fondo */
+
+.bg-login{
+    background: rgb(125,95,208);
+background: linear-gradient(90deg, rgba(125,95,208,1) 0%, rgba(91,63,200,1) 100%);    
+}
+
+
+/* Tarjeta */
+
+.tarjeta{
+    border-radius: 20px;
+}
+
+.redondeado-start{
+    border-radius: 20px ; 
+}
+
+.redondeado-end{
+    border-radius: 0 20px  20px 0; 
+}
+
+.fondoLogin{
+    background: url(../img/feather-4431599_1920.jpg) !important;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100% !important;
+    min-height: 40rem !important;
+    border-radius: 20px 0 0 20px;
+}
+
+
+/*Formulario*/
+
+.formulario{
+    border: none;
+    border-bottom: 1px solid #270597;
+    border-radius: 0;
+    background-color: #f8f9fa ;
+}
+
+.formulario:focus{
+    
+    border-bottom: 1px solid #270597;
+    background-color: #f8f9fa ;
+    box-shadow: none;
+}
+
+
+.bienvenido{
+    color:#5b3ac9;
+}
+
+
+label{
+    color: #5b3ac9;
+}
+
+
+
+/* Boton de login */
+
+.loginButon{
+    background-color:#5b3ac9;
+    border: 3px solid #5b3ac9;
+    border-radius: 0;
+    color: white;
+    padding: 10px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.loginButon:hover{
+    transition: all 0.4s;
+    background-color: #270597;
+    border: 3px solid #270597;
+    
+}
+
+
+/* Links */
+
+a{
+    color: #5b3ac9;
+    text-decoration: none;
+}
+
+a:hover{
+    transition: all 0.3s;
+    color: red;
+}
+
+
+/* Media Queries */
+
+@media (min-width: 992px) {
+    .w-lg-50 {
+       width:50% !important;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    .redondeado-end{
+        border-radius: 20px; 
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .redondeado-start{
+        height: 100vh;
+        border-radius: 0;
+    }
+    .redondeado-end{
+        border-radius: 0;
+    }
+}
+    
+
+
+
+
