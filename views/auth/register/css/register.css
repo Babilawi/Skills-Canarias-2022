@@ -4,7 +4,7 @@
 body {
     font-family: "Poppins", sans-serif;
     background: rgb(125,95,208);
-    background: linear-gradient(90deg, rgba(125,95,208,1) 0%, rgba(91,63,200,1) 100%);  
+background: linear-gradient(90deg, rgba(125,95,208,1) 0%, rgba(91,63,200,1) 100%);   
 }
 
 .moon{
@@ -22,7 +22,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: 100% !important;
-    min-height: 45rem !important;
+    min-height: 43rem !important;
     border-radius: 20px 0 0 20px;
 }
 
