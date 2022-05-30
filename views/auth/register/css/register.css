@@ -68,7 +68,7 @@ label{
 
 .loginButon{
     background-color:#5b3ac9;
-    border: 3px solid #5b3ac9;
+    border: 0;
     border-radius: 0;
     color: white;
     padding: 10px 80px;
@@ -82,11 +82,25 @@ label{
     transition: all 0.4s;
 }
 
+
 .loginButon:hover{
     transition: all 0.4s;
     background-color: #270597;
-    border: 3px solid #270597;
+
     
+}
+
+.disabled{
+    background-color:#5b3ac950 !important;
+    border: 0;
+    cursor: default;
+ 
+}
+
+.disabled:hover{
+    background-color:#5b3ac950 !important;
+
+    cursor: default;
 }
 
 /* Links */
