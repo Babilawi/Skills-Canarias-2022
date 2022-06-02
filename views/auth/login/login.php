@@ -51,8 +51,10 @@
             </div>
 
             <div class="text-center mb-3 px-5 mt-4">
-              <p><a href="../register/register.html">Crea tu cuenta.</a></p>
+              <p><a href="../register/register.php">Crea tu cuenta.</a></p>
             </div>
+
+            <!--
             <div class="text-center">
               Tambien puedes iniciar sesión con:
             </div>
@@ -62,7 +64,10 @@
               <a href=""> <img class="mx-2" src="img/facebook.png" alt="" width="45px"></a>
               <a href=""><img class="mx-2" src="img/twitter.png" alt="" width="45px"></a>
 
-            </div>
+            </div> 
+            -->
+
+
             <div>
 
             </div>

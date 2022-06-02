@@ -144,7 +144,7 @@
 
           <div class="text-center mb-1 px-5 mt-4">
             <input disabled class="loginButon disabled" onclick="validation()" type="submit" id="registerButton" value="Regístrate" />
-            <p class="pt-2 pb-0 mb-0">¿Tienes cuenta? <a href="../login/login.html">Inicia sesión</a></p>
+            <p class="pt-2 pb-0 mb-0">¿Tienes cuenta? <a href="../login/login.php">Inicia sesión</a></p>
           </div>
 
         </div>
