@@ -27,12 +27,12 @@ function validation(){
             errores += "<li>El usuario esta vacio</li>";
         
         }
-        else if(name.value.length <= 5){
+        else if(name.value.length < 5){
             name.style.borderBottom = "1px solid red";
             error++;
             errores += "<li>El usuario debe tener al menos 5 caracteres</li>";
         }
-        else if(name.value.length >= 20){
+        else if(name.value.length > 20){
             name.style.borderBottom = "1px solid red";
             error++;
             errores += "<li>El usuario debe tener menos de 20 caracteres</li>";
