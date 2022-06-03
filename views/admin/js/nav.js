@@ -18,6 +18,26 @@ shrink_btn.addEventListener("click", () => {
 });
 
 
+//traer datos desde data.php y escribirlos en el html con ajax
+function traerDatos(){
+    $.ajax({
+        url: 'php/data.php',
+        type: 'GET',
+        dataType: 'html',
+        success: function(data){
+            $('#contenido').html(data);
+        }
+    });
+}
+
+traerDatos();
+
+
+
+
+
+
+
 
 function moveActiveTab() {
   let topPosition = activeIndex * 58 + 2.5;
@@ -54,3 +74,25 @@ function showTooltip() {
 tooltip_elements.forEach((elem) => {
   elem.addEventListener("mouseover", showTooltip);
 });
+
+
+
+function mostrarContenido(value){
+  ocultarCrud = document.getElementById('crud');
+  ocultarConfig = document.getElementById('config');
+  ocultarUsers = document.getElementById('users');
+
+  if (ocultarCrud.style.display = true) {
+    ocultarCrud.style.display = 'none';
+  }
+  if (ocultarConfig.style.display = true) {
+    ocultarConfig.style.display = 'none';
+  }
+  if (ocultarUsers.style.display = true) {
+    ocultarUsers.style.display = 'none';
+  }
+
+  mostrar = document.getElementById(value);
+  mostrar.style.display = 'block';
+
+}
