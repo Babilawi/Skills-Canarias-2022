@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,17 +86,17 @@
         <div class="admin-profile hide">
           <img src="./img/face-1.png" alt="">
           <div class="admin-info">
-            <h3>John Doe</h3>
+            <h3 class="text-capitalize"><?php echo $_SESSION['user'] ?></h3>
             <h5>Admin</h5>
           </div>
         </div>
-        <a href="#" class="log-out">
+        <a href="../../index.php" class="log-out">
           <i class='bx bx-log-out'></i>
         </a>
       </div>
       <div class="tooltip">
-        <span class="show">John Doe</span>
-        <span>Logout</span>
+        <span class="show text-capitalize"><?php echo $_SESSION['user'] ?></span>
+        <span>Cerra Sesión</span>
       </div>
     </div>
   </nav>
@@ -108,8 +115,8 @@
         <h2 class="text-center">Administración de usuarios</h2>
       </div>
       -->
-      <table  id="crudTable" class="display nowrap table table-striped w-100">
-        <thead>
+      <table  id="crudTable" class="pt-2 display nowrap table table-striped w-100">
+        <thead class="purpleHeader">
           <tr class="text-center">
             <th>Nombre</th>
             <th>Apellido</th>
@@ -148,17 +155,17 @@
     <!-- ================================================================= -->
 
     <div id="users" style="display: none;">
-      <table  id="userTable" class="display nowrap table table-striped w-100">
-        <thead>
+      <table  id="userTable" class="display pt-2 nowrap table table-striped w-100">
+        <thead class="purpleHeader">
           <tr class="text-center">
             <th>Nombre</th>
-            <th>Apellido</th>
             <th>Correo</th>
             <th>Teléfono</th>
-            <th class="w-25">Acciones</th>
+            <th>Pais</th>
+            <th class="w-25"></th>
           </tr>
         </thead>
-        <tbody id="contenido">
+        <tbody id="usuariosAjax">
 
 
       </table>
@@ -172,14 +179,28 @@
     <div id="config" style="display: none;">
       holas
     </div>
+
+    <!-- ================================================================= -->
+    <!-- ------------------------------ Edit ----------------------------- -->
+    <!-- ================================================================= -->
+
+
+    <div id="edit" style="display: none;">
+      <input type="text" name="" id="">
+      <input type="mail" name="" id="">
+      <input type="number" name="" id="">
+      <input type="text" name="" id="">
+    </div>
   </main>
 
+  <script src="/Skills-Canarias-2022/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="js/nav.js"></script>
-
   <script src="js/JQuery.Datatables.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  <script src="js/nav.js"></script>
+
+
 
 
   <script>
@@ -196,7 +217,11 @@
 });
 </script>
 
-
+<style>
+  input:hover{
+    border: 1px solid #ccc;
+  }
+</style>
 
 </body>
 

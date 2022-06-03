@@ -25,12 +25,123 @@ function traerDatos(){
         type: 'GET',
         dataType: 'html',
         success: function(data){
-            $('#contenido').html(data);
+            $('#usuariosAjax').html(data);
         }
     });
 }
 
 traerDatos();
+
+
+function editar(id){
+  tr = document.getElementById(id);
+ //obtener todos los td de la fila
+  td = tr.getElementsByTagName('td');
+  //obtener el valor de cada td
+  user = td[0].children[0].value;
+  mail = td[1].children[0].value;
+  phone = td[2].children[0].value;
+  country = td[3].children[0].value;
+  console.log(user, mail, phone, country);
+ 
+
+  //crear un objeto con los datos
+  datos = {
+    'id': id,
+    'user': user,
+    'mail': mail,
+    'phone': phone,
+    'country': country
+  };
+
+  //enviar los datos al servidor
+  $.ajax({
+    url: 'php/edit.php',
+    type: 'POST',
+    data: datos,
+    success: function(data){
+      traerDatos();
+      //sweat alert
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    
+    Toast.fire({
+        icon: 'success',
+        title: 'Editado con exito'
+
+    })
+    }
+  });
+}
+
+function avisoBorrar(id){
+  Swal.fire({
+    title: "¿Estas seguro?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3e1bb3",
+    cancelButtonColor: "#adadad",
+    confirmButtonText: "Borrar",
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+        borrar(id);
+      Swal.fire(
+        "Deleted!",
+        "Your file has been deleted.",
+        "success"
+      )
+    }
+  })
+}
+
+function borrar(id){
+
+  datos = {
+    'id': id,
+
+  };
+
+
+  $.ajax({
+    url: 'php/remove.php',
+    type: 'POST',
+    data: datos,
+    success: function(data){
+      traerDatos();
+      //sweat alert
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    
+    Toast.fire({
+        icon: 'success',
+        title: 'Borrado con exito'
+
+    })
+    }
+  });
+
+}
+
+
 
 
 

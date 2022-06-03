@@ -4,20 +4,30 @@ include_once '../../../config/config.php';
 
 $sql = "SELECT * FROM usuarios";
 $result = mysqli_query($connect, $sql);
+$cont=1;
 while ($row = mysqli_fetch_array($result)) {
+
+    if ($cont%2==0) {
+        $tipo="even";
+    }
+    else{
+        $tipo="odd";
+    }
+
     echo '
-    <tr>
-    <td hidden>'.$row['id'].'</td>
-    <td>'.$row['user'].'</td>
-    <td>'.$row['mail'].'</td>
-    <td>'.$row['phone'].'</td>
-    <td>'.$row['country'].'</td>
-    <td class="">
-      <button class="btn btn-success me-5">Editar</button>
-      <button class="btn btn-danger">Borrar</button>
-    </td>
+    <tr id="'.$row['id'].'" class="'.$tipo.'">
+      <td class="" ><input class="mt-1 form-control" type="text" value="'.$row['user'].'"><div hidden>'.$row['user'].' </div></td>
+      <td><input class="mt-1 form-control" type="mail" value="'.$row['mail'].'"></td>
+      <td><input class="mt-1 form-control" type="number" value="'.$row['phone'].'"></td>
+      <td><input class="mt-1 form-control" type="text" value="'.$row['country'].'"></td>
+      <td class="">
+        <button onClick="editar('.$row['id'].')" class="btn btn-success w-50">Editar</button>
+        <button onClick="avisoBorrar('.$row['id'].')" class="btn btn-danger w-50">Borrar</button>
+      </td>
   </tr>
     ';
+
+    $cont++;
 }
 
 

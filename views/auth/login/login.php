@@ -121,6 +121,7 @@ function limpiar($input) {
     $result = mysqli_query($connect, $sql);
     while ($row = mysqli_fetch_array($result)) {
       $usuario = $row['user'];
+      $admin = $row['permisos'];
       $hash = $row['pass'];
       $exist++;
     }
@@ -159,6 +160,7 @@ function limpiar($input) {
       if (password_verify($pass, $hash)){  # Verifica si la contraseña es correcta
         session_start();
         $_SESSION['user'] = $usuario;
+        $_SESSION['admin'] = $admin;
         header("Location: ../../../index.php");
     }else{
       echo "<script>const Toast = Swal.mixin({
