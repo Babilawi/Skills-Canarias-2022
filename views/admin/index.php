@@ -114,38 +114,21 @@ session_start();
       <div class="titulo">
         <h2 class="text-center">Administración de usuarios</h2>
       </div>
-      -->
-      <table  id="crudTable" class="pt-2 display nowrap table table-striped w-100">
+-->
+<div class="text-center ">
+<button onclick="añadir()" class="btn btn-purple">Añadir</button>
+</div>
+<table  id="crudTable" class="display pt-2 nowrap table table-striped w-100">
         <thead class="purpleHeader">
           <tr class="text-center">
             <th>Nombre</th>
-            <th>Apellido</th>
             <th>Correo</th>
-            <th>Teléfono</th>
-            <th class="w-25">Acciones</th>
+
+            <th class="w-25"></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Juan</td>
-            <td>Perez</td>
-            <td>Perez</td>
-            <td>Perez</td>
-            <td  class="">
-              <button class="btn btn-success me-5">Editar</button>
-              <button class="btn btn-danger">Borrar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>luan</td>
-            <td>luan</td>
-            <td>luan</td>
-            <td>luan</td>
-            <td class="">
-              <button class="btn btn-success me-5">Editar</button>
-              <button class="btn btn-danger">Borrar</button>
-            </td>
-          </tr>
+        <tbody id="crudAjax">
+
 
       </table>
     </div>
@@ -180,18 +163,84 @@ session_start();
       holas
     </div>
 
-    <!-- ================================================================= -->
-    <!-- ------------------------------ Edit ----------------------------- -->
-    <!-- ================================================================= -->
 
-
-    <div id="edit" style="display: none;">
-      <input type="text" name="" id="">
-      <input type="mail" name="" id="">
-      <input type="number" name="" id="">
-      <input type="text" name="" id="">
-    </div>
   </main>
+
+    <!-- ================================================================= -->
+    <!-- ------------------------- Modal Editar -------------------------- -->
+    <!-- ================================================================= -->
+
+
+
+  <div id="modalEditarUser" class="modalEditar bg-light" style="display: none;">
+    <div class="row">
+    <div class="col-12 text-center mb-3">
+      <h2>Editar Usuario</h2>
+    </div>
+       <div class="col-12 text-center">
+          <input type="hidden" id="tabla" value="">
+          <input type="hidden" id="idEdit" value="">
+          <input id="userEdit" class="input-purple mx-auto w-50 form-control mb-3" value="" placeholder="Usuario">
+       </div> 
+        <div class="col-12 text-center">
+          <input type="mail" id="mailEdit" class="input-purple mx-auto w-50 form-control mb-3" value="" placeholder="Correo">
+        </div>
+        <div class="col-12 text-center">
+          <input type="number" id="phoneEdit" class="input-purple mx-auto w-50 form-control mb-3" value="" placeholder="Teléfono">
+        </div>
+        <div class="col-12 text-center">
+          <input id="countryEdit" class="input-purple mx-auto w-50 form-control mb-3" value="" placeholder="Pais">
+        </div>
+        <div class="col-12 text-center mt-2">
+          <button class="btn btn-danger me-3" onclick="cerrarEditar()">Cancelar</button>
+          <button class="btn btn-success" onclick="editarEnviar()">Guardar</button>
+        </div>
+    </div>
+  </div>
+
+  <div id="modalEditarCrud" class="modalEditar bg-light" style="display: none;">
+    <div class="row">
+    <div class="col-12 text-center mb-3">
+      <h2>Editar Usuario</h2>
+    </div>
+       <div class="col-12 text-center">
+          <input type="hidden" id="tablaC" value="">
+          <input type="hidden" id="idEditC" value="">
+          <input id="userEditC" class="input-purple mx-auto w-50 form-control mb-3" value="" placeholder="Nombre">
+       </div> 
+        <div class="col-12 text-center">
+          <input type="mail" id="mailEditC" class="input-purple mx-auto w-50 form-control mb-3" value="" placeholder="Cantidad">
+        </div>
+        <div class="col-12 text-center mt-2">
+          <button class="btn btn-danger me-3" onclick="cerrarEditar()">Cancelar</button>
+          <button class="btn btn-success" onclick="editarEnviar()">Guardar</button>
+        </div>
+    </div>
+  </div>
+
+    <!-- ================================================================= -->
+    <!-- --------------------------- Modal crear ------------------------- -->
+    <!-- ================================================================= -->
+
+    <div id="modalCrear" class="modalEditar bg-light" style="display: none;">
+    <div class="row">
+    <div class="col-12 text-center mb-3">
+      <h2>Añadir ...</h2>
+    </div>
+       <div class="col-6 text-center">
+          <input id="nombreCrear" class="input-purple mx-auto form-control mb-3" value="" placeholder="Nombre">
+       </div> 
+        <div class="col-6 text-center">
+          <input type="number" id="cantidadCrear" class="input-purple mx-auto  form-control mb-3" value="" placeholder="Cantidad">
+        </div>
+        <div class="col-12 text-center mt-2">
+          <button class="btn btn-danger me-3" onclick="cerrarCrear()">Cancelar</button>
+          <button class="btn btn-success" onclick="crearEnviar()">Guardar</button>
+        </div>
+    </div>
+  </div>
+
+
 
   <script src="/Skills-Canarias-2022/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
@@ -212,8 +261,9 @@ session_start();
 
 <script>
   $(document).ready(function () {
-  $('#userTable').DataTable();
-  scrollX: true
+  $('#userTable').DataTable({
+
+});
 });
 </script>
 

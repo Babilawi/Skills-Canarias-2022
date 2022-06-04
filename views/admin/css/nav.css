@@ -17,7 +17,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
+  overflow-y: hidden;
   background-color: #e4e2f5;
   min-height: 100vh;
   display: flex;
@@ -462,5 +462,51 @@ td > input:focus{
   background:linear-gradient(90deg, rgb(87, 43, 207) 0%, rgba(91,63,200,1) 100%);
   color: white !important;
 }
+
+.modalEditar{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 0 .1rem #3e1bb3; 
+  animation: modal .3s ease-in-out;
+}
+
+@keyframes modal{
+  0%{
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.8);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.input-purple{
+  border: #3e1bb3 1px solid !important;
+}
+
+.input-purple:focus{
+  border: #3e1bb3 1px solid !important;
+  box-shadow: #3e1bb3 0 0 0 .1rem !important;
+}
+
+.btn-purple{
+  background: #3e1bb3 !important;
+  border: #3e1bb3 1px solid !important;
+  color: white !important;
+}
+
+.btn-purple:focus{
+box-shadow: none;
+}
+
+
 
 
