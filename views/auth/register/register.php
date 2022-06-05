@@ -173,6 +173,8 @@
 
 <?php
 
+$error=0;
+
 if (isset($_POST['user'])){
   include_once '../../../config/config.php';
 
@@ -180,13 +182,65 @@ if (isset($_POST['user'])){
 # ---------------- Variables ----------------
 # ===========================================
 
-$user = $_POST['user'];
-$pass = $_POST['pass1'];
-$pass2 = $_POST['pass2'];
-$mail = $_POST['mail'];
-$city = $_POST['city'];
-$country = $_POST['country'];
-$phone = $_POST['phone'];
+function limpiar($input) {
+ 
+  $search = array(
+    '@<script[^>]*?>.*?</script>@si',   // Elimina javascript
+    '@<[\/\!]*?[^<>]*?>@si',            // Elimina las etiquetas HTML
+    '@<style[^>]*?>.*?</style>@siU',    // Elimina las etiquetas de estilo
+    '@<![\s\S]*?--[ \t\n\r]*>@'         // Elimina los comentarios multi-línea
+  );
+ 
+    $output = preg_replace($search, '', $input);
+    return $output;
+  }
+
+$user = limpiar($_POST['user']);
+$pass = limpiar($_POST['pass1']);
+$pass2 = limpiar($_POST['pass2']);
+$mail = limpiar($_POST['mail']);
+$city = limpiar($_POST['city']);
+$country = limpiar($_POST['country']);
+$phone = limpiar($_POST['phone']);
+
+
+if ($pass != $pass2){
+  $error++;
+}
+
+if (strlen($user) <= 5 || strlen($user) >= 20){
+  $error++;
+}
+
+if (strlen($pass) < 6){
+  $error++;
+}
+
+
+if ($error != 0){
+  echo '<script>
+  swal.fire({
+    title: "Error",
+    text: "Algunos campos no son correctos",
+    icon: "error",
+    confirmButtonText: "Aceptar"
+  });
+  </script>';
+}else{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # ==================================================
 # ---------------- Exist validation ----------------
@@ -279,7 +333,7 @@ $phone = $_POST['phone'];
         }
     }
 }
-
+}
 ?>
 
 </body>

@@ -7886,7 +7886,7 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: #5b3ac9 !important;
 }
 
 .text-secondary {
@@ -11657,7 +11657,7 @@ body {
 }
 .contact-section .card {
   border: 0;
-  border-bottom: 0.25rem solid #64a19d;
+  border-bottom: 0.25rem solid #5b3ac9;
 }
 .contact-section .card h4, .contact-section .card .h4 {
   font-size: 0.8rem;
@@ -11683,7 +11683,7 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 .contact-section .social a:hover {
-  color: rgba(255, 255, 255, 0.5);
+  color: #5b3ac9;
 }
 .contact-section .social a:active {
   color: #fff;

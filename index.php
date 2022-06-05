@@ -52,6 +52,13 @@ session_start();
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                    <?php
+                                    if (($_SESSION['admin']) == 'admin') {
+                                    ?>
+                                    <li><a class="dropdown-item" href="views/admin/index.php">Administrar</a></li>
+                                    <?php
+                                    }
+                                    ?>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="php/logout.php">Cerrar Sesión</a></li>
                                 </ul>

@@ -17,7 +17,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
+  overflow-y: hidden;
   background-color: #e4e2f5;
   min-height: 100vh;
   display: flex;
@@ -368,3 +368,145 @@ body.shrink .tooltip {
 .sidebar-links{
     margin-top: 2rem;
 }
+
+
+/*=====================================================*/
+/*------------------------ DataTables ---------------------*/
+/*=====================================================*/
+
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #3e1bb3;
+  border-color: #3e1bb3;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  color: #3e1bb3;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.page-link:hover{
+  color: #3e1bb3;
+}
+
+input[type=search] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #3e1bb3;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+input[type=search]:focus {
+  border: 1px solid #3e1bb3;
+  box-shadow: 0 0 0 .1rem #3e1bb3;
+}
+
+input[type=search]:hover {
+  border: 1px solid #3e1bb3;
+}
+
+
+.titulo{
+  padding-top: 0px;
+  margin: auto;
+  width:fit-content
+}
+
+.titulo > h2{
+  background: linear-gradient(90deg, rgb(107, 69, 212) 0%, rgba(91,63,200,1) 100%);
+  padding: 1rem;
+  color: white;
+  border-radius: 10px;
+}
+
+select{
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #3e1bb3 !important;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+select:focus{
+  border: 1px solid #3e1bb3 !important;
+  box-shadow: 0 0 0 .1rem #3e1bb3 !important;
+}
+
+option{
+  background: linear-gradient(90deg, rgb(107, 69, 212) 0%, rgba(91,63,200,1) 100%) !important;
+  padding: 1rem;
+  color: black;
+  border-radius: 10px;
+}
+
+td > input{
+  border: 1px solid #3e1bb3 !important;
+  border-radius: 10px !important;
+  padding: 3px  !important;
+  padding-left: 7px !important;
+
+}
+
+td > input:focus{
+  box-shadow: 0 0 0 .1rem #3e1bb3 !important;
+}
+
+.purpleHeader{
+  background:linear-gradient(90deg, rgb(87, 43, 207) 0%, rgba(91,63,200,1) 100%);
+  color: white !important;
+}
+
+.modalEditar{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 0 .1rem #3e1bb3; 
+  animation: modal .3s ease-in-out;
+}
+
+@keyframes modal{
+  0%{
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.8);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.input-purple{
+  border: #3e1bb3 1px solid !important;
+}
+
+.input-purple:focus{
+  border: #3e1bb3 1px solid !important;
+  box-shadow: #3e1bb3 0 0 0 .1rem !important;
+}
+
+.btn-purple{
+  background: #3e1bb3 !important;
+  border: #3e1bb3 1px solid !important;
+  color: white !important;
+}
+
+.btn-purple:focus{
+box-shadow: none;
+}
+
+
+
+
