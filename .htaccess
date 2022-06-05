@@ -1,0 +1,5 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+RewriteRule ^/$ index.php [L]
+RewriteRule ^login/$ views/auth/login.php
