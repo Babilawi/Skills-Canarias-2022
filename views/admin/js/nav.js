@@ -38,7 +38,7 @@ function traerDatos(){
   });
 }
 
-traerDatos();
+  traerDatos();
 
 //========================================================================
 //--------------------------- Editar Datos -------------------------------
@@ -134,6 +134,7 @@ if (tabla == "usuarios"){
     data: datos,
     success: function(data){
 
+      console.log(data);
       id = "";
       user = "";
       mail = "";
@@ -142,7 +143,8 @@ if (tabla == "usuarios"){
       tabla = "";
 
       traerDatos();
-      //sweat alert
+
+      //sweet alert
       const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -154,12 +156,18 @@ if (tabla == "usuarios"){
         toast.addEventListener('mouseleave', Swal.resumeTimer)
         }
     })
-    
-    Toast.fire({
-        icon: 'success',
-        title: 'Editado con exito'
 
-    })
+    if (data == "1"){
+      Toast.fire({
+        icon: 'success',
+        title: 'Editado correctamente'
+      })
+    }else{
+      Toast.fire({
+        icon: 'error',
+        title: 'Ha ocurrido un error'
+      })
+    }
     }
   });
 
@@ -214,6 +222,11 @@ function crearEnviar(){
     data: datos,
     success: function(data){
       traerDatos();
+      tabla1.destroy();
+      setTimeout(function () {
+        tabla1 = $('#crudTable').DataTable({});
+      }, 50);
+
       //sweat alert
       const Toast = Swal.mixin({
         toast: true,
@@ -285,6 +298,12 @@ function borrar(id,tabla){
     data: datos,
     success: function(data){
       traerDatos();
+      tabla1.destroy();
+      tabla2.destroy();
+      setTimeout(function () {
+        tabla1 = $('#crudTable').DataTable({});
+        tabla2 = $('#userTable').DataTable({});
+      }, 50);
       //sweat alert
       const Toast = Swal.mixin({
         toast: true,
@@ -307,6 +326,9 @@ function borrar(id,tabla){
   });
 
 }
+
+
+
 
 
 
@@ -372,3 +394,8 @@ function mostrarContenido(value){
   mostrar.style.display = 'block';
 
 }
+
+
+
+
+

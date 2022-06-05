@@ -19,7 +19,7 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-y: hidden;
   background-color: #e4e2f5;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   position: relative;
 }
@@ -33,6 +33,7 @@ ul {
 }
 
 nav {
+  z-index: 5000;
   position: sticky;
   top: 0;
   left: 0;
@@ -412,6 +413,35 @@ input[type=search]:hover {
   border: 1px solid #3e1bb3;
 }
 
+@media(max-width: 960px) {
+
+  #crudTable_filter {
+    display: none !important;
+  }
+
+  #userTable_filter {
+    display: none !important;
+  }
+
+  #crudTable_length {
+    display: none !important;
+  }
+
+  #userTable_length {
+    display: none !important;
+  }
+
+  #crudTable_info {
+    display: none !important;
+  }
+  
+  #userTable_info {
+    display: none !important;
+  }
+}
+  
+
+
 
 .titulo{
   padding-top: 0px;
@@ -477,6 +507,15 @@ td > input:focus{
   animation: modal .3s ease-in-out;
 }
 
+@media (max-width: 768px) {
+  .modalEditar{
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+  }
+}
+
 @keyframes modal{
   0%{
     opacity: 0;
@@ -505,6 +544,19 @@ td > input:focus{
 
 .btn-purple:focus{
 box-shadow: none;
+}
+
+.animation{
+  animation: fadeIn .3s ease-in-out;
+}
+
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 

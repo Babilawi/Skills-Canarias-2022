@@ -1,5 +1,10 @@
 <?php 
 
+session_start();
+if (($_SESSION['admin']) != 'admin') {
+    header("Location: ../../../");
+}
+
 include_once '../../../config/config.php';
 
 

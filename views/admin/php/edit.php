@@ -1,5 +1,14 @@
 <?php 
 
+session_start();
+if (($_SESSION['admin']) != 'admin') {
+    header("Location: ../../../");
+}
+
+// desactivar notificaciones de error
+error_reporting(0);
+
+
 include_once '../../../config/config.php';
 $tabla = $_POST['tabla'];
 
@@ -22,15 +31,20 @@ if ($tabla=="usuarios") {
 
 if ($tabla=="usuarios") {
   $sql = "UPDATE usuarios SET user='$user', mail='$mail', phone='$phone', country='$country' WHERE id='$id'";
-  $result = mysqli_query($connect, $sql);
+    if (mysqli_query($connect, $sql)){
+      echo "1";
+    } else {
+        echo "0";}
 }else{
     $sql = "UPDATE crud SET nombre='$user', cantidad='$mail' WHERE id='$id'";
-    $result = mysqli_query($connect, $sql);
+    if (mysqli_query($connect, $sql)) {
+        echo "1";
+    } else {
+        echo "0";
+    }
 }
 
 
-$sql = "UPDATE $tabla SET user='$user', mail='$mail', phone='$phone', country='$country' WHERE id='$id'";
-$result = mysqli_query($connect, $sql);
 
 
 

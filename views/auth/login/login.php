@@ -11,17 +11,18 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="css/login.css" />
 </head>
 
 <body class="bg-login  vh-100 d-flex">
-  <div class="container shadow  redondeado-start align-self-sm-center">
+  <div class="container shadow animation redondeado-start align-self-sm-center">
 
     <div class="redondeado-start  row">
 
       <div class="d-none d-lg-block col-7 p-0 h-100 ">
-        <div class="fondoLogin">
-
+        <div class="fondoLogin position-relative">
+        <a href="../../../index.php" class="position-absolute m-4 text-white d-flex align-items-cente"><i class='bx bx-left-arrow-alt pt-1' style='color:#ffffff'  ></i>Volver</a>
         </div>
       </div>
 

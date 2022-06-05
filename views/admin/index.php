@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-
+if (($_SESSION['admin']) != 'admin') {
+    header("Location: ../../");
+}
 
 ?>
 
@@ -59,19 +61,19 @@ session_start();
             <span class="link hide">Usuarios</span>
           </a>
         </li>
-        <li class="tooltip-element" data-tooltip="2">
+                   <!-- <li class="tooltip-element" data-tooltip="2">
           <a href="#" onclick="mostrarContenido('config')" data-active="2">
             <div class="icon">
               <i class='bx bx-cog'></i>
               <i class='bx bxs-cog'></i>
             </div>
-            <span class="link hide">Configuración</span>
+<span class="link hide">Configuración</span>
           </a>
-        </li>
+        </li>-->
         <div class="tooltip">
           <span class="show">Crud</span>
           <span>Usuarios</span>
-          <span>Configuración</span>
+          <!--<span>Configuración</span>-->
         </div>
       </ul>
 
@@ -96,7 +98,7 @@ session_start();
       </div>
       <div class="tooltip">
         <span class="show text-capitalize"><?php echo $_SESSION['user'] ?></span>
-        <span>Cerra Sesión</span>
+        <span>Cerrar Sesión</span>
       </div>
     </div>
   </nav>
@@ -109,7 +111,7 @@ session_start();
     <!-- ----------------------------- CRUD ------------------------------ -->
     <!-- ================================================================= -->
 
-    <div id="crud">
+    <div id="crud" class="animation">
       <!--
       <div class="titulo">
         <h2 class="text-center">Administración de usuarios</h2>
@@ -122,7 +124,7 @@ session_start();
         <thead class="purpleHeader">
           <tr class="text-center">
             <th>Nombre</th>
-            <th>Correo</th>
+            <th>Cantidad</th>
 
             <th class="w-25"></th>
           </tr>
@@ -137,7 +139,7 @@ session_start();
     <!-- --------------------------- Usuarios ---------------------------- -->
     <!-- ================================================================= -->
 
-    <div id="users" style="display: none;">
+    <div id="users" style="display: none;"  class="animation">
       <table  id="userTable" class="display pt-2 nowrap table table-striped w-100">
         <thead class="purpleHeader">
           <tr class="text-center">
@@ -159,10 +161,26 @@ session_start();
     <!-- ---------------------------- Config ----------------------------- -->
     <!-- ================================================================= -->
 
-    <div id="config" style="display: none;">
-      holas
-    </div>
+    <div id="config" style="display: none;" class="animation">
+      <div class="row">
+        <div class="col-12">
+        <div class="titulo ">
+          <h2 class="text-center">Configuración</h2>
+        </div>
+        </div>
 
+        <div class="col-4 text-center">
+          <p class="">Favicon</p>
+
+          <div class="favicon">
+            <img src="../../favicon.ico" alt="">
+          </div>
+          <div class="text-center mt-3">
+            <button onclick="image()" class="btn btn-purple">Cambiar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main>
 
@@ -240,32 +258,42 @@ session_start();
     </div>
   </div>
 
+  
 
-
+  <!-- sweetalert -->
   <script src="/Skills-Canarias-2022/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 
+  <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  
+  
+
+  <!-- DataTables -->
   <script src="js/JQuery.Datatables.js"></script>
   <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Main JS -->
   <script src="js/nav.js"></script>
-
-
 
 
   <script>
     $(document).ready(function () {
-    $('#crudTable').DataTable();
-    scrollX: true
-  });
+      // esperar 1 segundo para que se cargue la tabla
+      setTimeout(function () {
+        tabla1 = $('#crudTable').DataTable({});
+        tabla2 = $('#userTable').DataTable({});
+      }, 100);
+    });
+
+
   </script>
 
-<script>
-  $(document).ready(function () {
-  $('#userTable').DataTable({
+  
 
-});
-});
-</script>
+
+
+
+
 
 <style>
   input:hover{

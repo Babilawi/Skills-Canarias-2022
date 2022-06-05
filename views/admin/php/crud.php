@@ -1,5 +1,10 @@
 <?php 
 
+session_start();
+if (($_SESSION['admin']) != 'admin') {
+    header("Location: ../../../");
+}
+
 include_once '../../../config/config.php';
 
 $sql = "SELECT * FROM crud";
@@ -16,9 +21,11 @@ while ($row = mysqli_fetch_array($result)) {
         $tipo="odd";
     }
 
+
+
     echo '
     <tr id="'.$id.'" class="'.$tipo.'">
-      <td class="pt-3" ><p class="p-0 m-0">'.$row['nombre'].'</p></td>
+      <td class="pt-3" ><p class=" p-0 m-0">'.$row['nombre'].'</p></td>
       <td class="pt-3"><p class="p-0 m-0">'.$row['cantidad'].'</p></td>
       <td class="">
         <button onClick="editar(\''.$id.'\',\'crud\')" class="btn btn-success w-50">Editar</button>

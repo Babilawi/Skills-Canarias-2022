@@ -88,15 +88,23 @@ session_start();
         </header>
 
 
+
+
+
+        <!-- En caso de que haga falta contenido descomentar -->
        
-        <!-- Projects-->
+        <!--
         <section class="projects-section bg-light" id="projects">
             <div class="container px-4 px-lg-5">
               
             </div>
         </section>
-        <!-- Signup-->
-        
+        -->
+
+
+
+
+
         <!-- Contact-->
         <section class="contact-section bg-black">
             <div class="container px-4 px-lg-5">
@@ -145,10 +153,6 @@ session_start();
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
     </body>
 </html>
