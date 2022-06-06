@@ -8,7 +8,7 @@ if (($_SESSION['admin']) != 'admin') {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -24,7 +24,7 @@ if (($_SESSION['admin']) != 'admin') {
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/Skills-Canarias-2022/favicon.ico" type="image/x-icon">
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
 </head>
@@ -61,7 +61,7 @@ if (($_SESSION['admin']) != 'admin') {
             <span class="link hide">Usuarios</span>
           </a>
         </li>
-                   <!-- <li class="tooltip-element" data-tooltip="2">
+                    <li class="tooltip-element" data-tooltip="2">
           <a href="#" onclick="mostrarContenido('config')" data-active="2">
             <div class="icon">
               <i class='bx bx-cog'></i>
@@ -69,11 +69,11 @@ if (($_SESSION['admin']) != 'admin') {
             </div>
 <span class="link hide">Configuración</span>
           </a>
-        </li>-->
+        </li>
         <div class="tooltip">
           <span class="show">Crud</span>
           <span>Usuarios</span>
-          <!--<span>Configuración</span>-->
+         <span>Configuración</span>
         </div>
       </ul>
 
@@ -163,22 +163,30 @@ if (($_SESSION['admin']) != 'admin') {
 
     <div id="config" style="display: none;" class="animation">
       <div class="row">
-        <div class="col-12">
-        <div class="titulo ">
-          <h2 class="text-center">Configuración</h2>
-        </div>
-        </div>
 
-        <div class="col-4 text-center">
+
+        <div class="col-12 col-lg-4  mt-5 text-center">
           <p class="">Favicon</p>
 
           <div class="favicon">
-            <img src="../../favicon.ico" alt="">
+            <img src="../../favicon.ico" height="150rem" alt="">
           </div>
           <div class="text-center mt-3">
-            <button onclick="image()" class="btn btn-purple">Cambiar</button>
+            <button onclick="image('fav')" class="btn btn-purple">Cambiar</button>
           </div>
         </div>
+
+        <div class="col-12 col-lg-4 mt-5 text-center">
+          <p class="">Portada Inicio</p>
+
+          <div class="favicon">
+            <img src="../../img/bg-masthead.jpg" height="150rem" alt="">
+          </div>
+          <div class="text-center mt-3">
+            <button onclick="image('por')" class="btn btn-purple">Cambiar</button>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -255,6 +263,44 @@ if (($_SESSION['admin']) != 'admin') {
           <button class="btn btn-danger me-3" onclick="cerrarCrear()">Cancelar</button>
           <button class="btn btn-success" onclick="crearEnviar()">Guardar</button>
         </div>
+    </div>
+  </div>
+
+    <!-- ================================================================= -->
+    <!-- --------------------------- Modal imagen ------------------------ -->
+    <!-- ================================================================= -->
+
+  <div id="modalFav" class="modalEditar bg-light" style="display: none;">
+    <div class="row">
+      <form action="php/image.php" method="POST" enctype='multipart/form-data'>
+    <div class="col-12 text-center mb-3">
+      <h2>Cambiar Favicon </h2>
+    </div>
+       <div class="col-12 text-center">
+          <input type="file" id="favicon"  name="img" class="input-purple mx-auto form-control mb-3" accept=".ico"  >
+       </div> 
+        <div class="col-12 text-center mt-2">
+          <button form="none" class="btn btn-danger me-3" onclick="imageClose()">Cancelar</button>
+          <button  class="btn btn-success" onclick="">Enviar</button>
+        </div>
+        </form>
+    </div>
+  </div>
+
+  <div id="modalPor" class="modalEditar bg-light" style="display: none;">
+    <div class="row">
+      <form action="php/image.php" method="POST" enctype='multipart/form-data'>
+    <div class="col-12 text-center mb-3">
+      <h2>Cambiar Portada </h2>
+    </div>
+       <div class="col-12 text-center">
+          <input type="file" id="portada"  name="img" class="input-purple mx-auto form-control mb-3" accept=".jpg,.png"  >
+       </div> 
+        <div class="col-12 text-center mt-2">
+          <button form="none" class="btn btn-danger me-3" onclick="imageClose()">Cancelar</button>
+          <button   class="btn btn-success" onclick="">Enviar</button>
+        </div>
+        </form>
     </div>
   </div>
 

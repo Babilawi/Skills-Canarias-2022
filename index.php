@@ -16,7 +16,7 @@ session_start();
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Nombre</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -37,7 +37,7 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto fw-bolder">
                         <li class="nav-item"><a class="nav-link" href="#page-top">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Custom</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                         <?php
                         if (!isset($_SESSION['user'])) {
                         ?>
@@ -106,7 +106,7 @@ session_start();
 
 
         <!-- Contact-->
-        <section class="contact-section bg-black">
+        <section id="contacto" class="contact-section bg-black">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5">
                     <div class="col-md-4 mb-3 mb-md-0">

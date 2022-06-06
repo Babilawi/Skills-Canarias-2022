@@ -13,6 +13,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="css/login.css" />
+  <link rel="shortcut icon" href="/Skills-Canarias-2022/favicon.ico" type="image/x-icon">
 </head>
 
 <body class="bg-login  vh-100 d-flex">
@@ -45,7 +46,7 @@
               <p class="pt-3 text-end "><a href="#">¿Olvidaste tu contraseña?</a></p>
 
             </div>
-            </form>
+        </form>
 
             <div class="text-center mb-3 px-5 mt-4">
               <input class="loginButon" onclick="validation()" type="submit" value="Iniciar Sesión" />

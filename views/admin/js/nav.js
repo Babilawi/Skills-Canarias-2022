@@ -331,6 +331,24 @@ function borrar(id,tabla){
 
 
 
+function image(tipo){
+
+  if (tipo == "fav"){
+  document.getElementById('modalFav').style.display = 'block';}
+  if (tipo == "por"){
+    document.getElementById('modalPor').style.display = 'block';
+  }
+  
+}
+
+function imageClose(){
+  document.getElementById('modalFav').style.display = 'none';
+  document.getElementById('modalPor').style.display = 'none';
+}
+
+
+
+
 
 //========================================================================
 //----------------------------------- Nav --------------------------------

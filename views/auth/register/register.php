@@ -16,6 +16,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="css/register.css">
+  <link rel="shortcut icon" href="/Skills-Canarias-2022/favicon.ico" type="image/x-icon">
 
 </head>
 
